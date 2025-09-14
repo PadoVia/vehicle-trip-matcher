@@ -17,3 +17,9 @@ services:
       - /dev/shm:/dev/shm
       - /tmp:/tmp
       - /data-per-docker/osrm:/app/osm/
+    networks:
+      - dokploy-network
+
+networks:
+  dokploy-network:
+    external: true
