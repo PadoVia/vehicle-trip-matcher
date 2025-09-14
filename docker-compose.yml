@@ -8,7 +8,6 @@ services:
     container_name: vehicle-trip-matcher
     restart: unless-stopped
     ipc: host
-    network_mode: "host"
     ulimits:
       memlock:
         soft: 137438953472
