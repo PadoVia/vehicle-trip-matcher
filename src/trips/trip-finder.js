@@ -25,6 +25,7 @@ async function getTripsByStops(traversedStops, timestamp){
         WITH selected_version AS (
             SELECT id AS gtfs_version_id
             FROM gtfs_versions
+            WHERE active = TRUE
             ORDER BY import_date DESC
             LIMIT 1
         ),

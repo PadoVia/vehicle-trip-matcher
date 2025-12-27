@@ -22,7 +22,7 @@ async function getStopByNodes(nodes){
         FROM stops_versions sv
         JOIN stops_data sd ON sv.stop_hash = sd.hash
         WHERE sv.gtfs_version_id = (
-            SELECT id FROM gtfs_versions ORDER BY import_date DESC LIMIT 1
+            SELECT id FROM gtfs_versions WHERE active = TRUE ORDER BY import_date DESC LIMIT 1
         )
         AND (
             ${conditions}
